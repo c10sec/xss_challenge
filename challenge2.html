@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Who is Joe | XSS challenge</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="mostrarPistas.js"></script>
+<head>
+<body>
+
+<br>
+
+<h1 id="joeMama"></h1>
+
+<script>
+    var joeInput = (new URL(location).searchParams.get('joe') || "Joe")
+    joeInput = joeInput.replace(/img/g, '')
+    joeInput = joeInput.replace(/svg/g, '')
+    joeInput = joeInput.replace(/iframe/g, '')
+    joeInput = joeInput.replace(/style/g, '')
+    joeInput = joeInput.replace(/body/g, '')
+    joeMama.innerHTML = "Who is " + joeInput + "?"
+    //Joe Mama lmao
+</script>
+
+<br><hr><br>
+<div id="pistas">
+<h2>Pistas <span id="idPista">0</span>/3 (<a href="#" onclick="mostrarPista()">mostrar</a>)</h2>
+<!-- Las pistas han sido codificadas en base64 para evitar que las leas accidentalmente mirando el código de la web. Siente libre de consultarlas si te encuentras atascado, todos necesitamos ayuda de vez en cuando. -->
+<ol>
+<li id="pista1" style="display:none">UGFyZWNlIHF1ZSB2YXJpYXMgZXRpcXVldGFzIHNvbiBmaWx0cmFkYXMgcG9yIGVsIEphdmFzY3JpcHQsIG1pcmEgYSB2ZXIgc2kgcHVlZGVzIHJlcHJlc2VudGFyIGxhIG1pc21hIGV0aXF1ZXRhIGNvbiBvdHJhcyBwYWxhYnJhcy4=</li>
+
+<li id="pista2" style="display:none">wr9Db24gb3RyYXMgcGFsYWJyYXM/IFF1aXrDoXMgZGViZXLDrWEgaGFiZXIgZGljaG8gImNvbiBvdHJhcyBsZXRyYXMiLg==</li>
+
+<li id="pista3" style="display:none">am9lbWFtYSAhPSBKb2VtYW1h</li>
+</ol>
+</div>
+
+</body>
+</html> 

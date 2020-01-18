@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Leña al mono | XSS challenge</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="mostrarPistas.js"></script>
+<head>
+<body>
+
+<br>
+
+<h1>Leña al mono, que es de goma.</h1>
+
+<script>
+    var nombreInput = (new URL(location).searchParams.get('nombre') || "mono")
+    nombreInput = nombreInput.replace(/[A-Za-z0-9]/g, '')
+    eval(nombreInput)
+</script>
+
+<br><hr><br>
+<div id="pistas">
+<h2>Pistas <span id="idPista">0</span>/3 (<a href="#" onclick="mostrarPista()">mostrar</a>)</h2>
+<!-- Las pistas han sido codificadas en base64 para evitar que las leas accidentalmente mirando el código de la web. Siente libre de consultarlas si te encuentras atascado, todos necesitamos ayuda de vez en cuando. -->
+<ol>
+<li id="pista1" style="display:none">ISsoKVtd</li>
+
+<li id="pista2" style="display:none">UGlzdGEgbm8gZGlzcG9uaWJsZS4gUGFyYSBjb25zZWd1aXIgcGlzdGFzIG51ZXZhcyBhZHF1aWVyYSB1bmEgY3VlbnRhIHByZW1pdW0u</li>
+
+<li id="pista3" style="display:none">SkFKQUpBLCBlcmEgYnJvbWEuIE5vIGhheSBuaW5ndWEgY3VlbnRhIHByZW1pdW0sIHBlcm8gdGFtcG9jbyBoYXkgbcOhcyBwaXN0YXMgOig=</li>
+</ol>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,21 @@
+body {
+  background-color: #1F1B24;
+}
+
+h1 {
+  color: green;
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+}
+#pistas{
+  color: green;
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+}
+a {
+  color:red
+}
+li {
+  font-size: 20px;
+}
+

@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hola mundo | XSS challenge</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="mostrarPistas.js"></script>
+<head>
+<body>
+
+<br>
+
+<h1 id="holamundo"></h1>
+
+<script>
+    holamundo.innerHTML = "¡Hola " + (new URL(location).searchParams.get('mundo') || "mundo!")
+</script>
+
+<br><hr><br>
+<div id="pistas">
+<h2>Pistas <span id="idPista">0</span>/3 (<a href="#" onclick="mostrarPista()">mostrar</a>)</h2>
+<!-- Las pistas han sido codificadas en base64 para evitar que las leas accidentalmente mirando el código de la web. Siente libre de consultarlas si te encuentras atascado, todos necesitamos ayuda de vez en cuando. -->
+<ol>
+<li id="pista1" style="display:none">RXN0YSBlcyBzaW1wbGUsIHNlZ3VybyBxdWUgZW4gR29vZ2xlIHB1ZWRlcyBlbmNvbnRyYXIgYWxnbyBxdWUgdGUgc2VhIMO6dGlsLg==</li>
+
+<li id="pista2" style="display:none">SW5mw7NybWF0ZSBhY2VyY2EgZGUgbG9zIGV2ZW50b3MgZW4gSmF2YXNjcmlwdA==</li>
+
+<li id="pista3" style="display:none">Jmx0c3ZnJmd0</li>
+</ol>
+</div>
+
+</body>
+</html> 

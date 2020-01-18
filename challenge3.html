@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bury me with my money | XSS challenge</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="mostrarPistas.js"></script>
+</head>
+<body>
+
+<br>
+
+<h1 id="buryMe"></h1>
+
+<script>	
+    var successMsg = '\"' + (new URL(location).searchParams.get('msg')|| "¡Página cargada con éxito!")  + '\"'
+    buryMe.innerHTML = "BURY ME WITH MY MONEY <br><br> <iframe width='30%' height='300' src='http://burymewithmymoney.com/' onload='console.log("+successMsg+")'> <p>Your browser does not support iframes.</p> </iframe>"
+</script>
+
+<br><hr><br>
+<div id="pistas">
+<h2>Pistas <span id="idPista">0</span>/3 (<a href="#" onclick="mostrarPista();">mostrar</a>)</h2>
+
+<!-- Las pistas han sido codificadas en base64 para evitar que las leas accidentalmente mirando el código de la web. Siente libre de consultarlas si te encuentras atascado, todos necesitamos ayuda de vez en cuando. -->
+<ol>
+<li id="pista1" style="display:none">UHJlc3RhIGF0ZW5jacOzbiBhIGNvbW8gc2UgaW5zZXJ0YSBlbCBwYXLDoW1ldHJvIGRlIGxhIFVSTC4=</li>
+
+<li id="pista2" style="display:none">Y29uc29sZS5sb2coJytzdWNjZXNzTXNnKycpCg==</li>
+
+<li id="pista3" style="display:none">TWlyYSBlbiBsYSBjb25zb2xhIGRlIGxhIHdlYiAoY2xpY2sgZGVyZWNobyArIGluc3BlY2Npb25hciBlbGVtZW50byku</li>
+</ol>
+</div>
+
+</body>
+</html> 
